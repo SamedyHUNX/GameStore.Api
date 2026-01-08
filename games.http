@@ -12,7 +12,7 @@ POST http://localhost:5033/games
 Content-Type: application/json
 
 {
-    "name": "New Game",
+    "name": "dsfjknhlsdgf ljihasdioltguioeuitpoijosfjsdflksdfjklgfdhljkghdfghjlkdfshjjdlsahjfdnjlkgdfjl;k",
     "genre": "Adventure",
     "price": 59.99,
     "releaseDate": "2024-07-15"
