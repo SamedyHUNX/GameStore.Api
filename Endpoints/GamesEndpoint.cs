@@ -1,4 +1,3 @@
-using System;
 using GameStore.Api.Dtos;
 
 namespace GameStore.Api.Endpoints;
