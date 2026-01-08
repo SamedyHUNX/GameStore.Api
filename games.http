@@ -7,7 +7,7 @@ GET http://localhost:5033/games/1
 
 ###
 
-// crateGame
+// createGame
 POST http://localhost:5033/games
 Content-Type: application/json
 
@@ -16,4 +16,17 @@ Content-Type: application/json
     "genre": "Adventure",
     "price": 59.99,
     "releaseDate": "2024-07-15"
+}
+
+###
+
+// updateGame
+PUT http://localhost:5033/games/6
+Content-Type: application/json
+
+{
+    "name": "Super Mario",
+    "genre": "Arcade",
+    "price": 9.99,
+    "releaseDate": "2026-01-01"
 }
