@@ -12,9 +12,9 @@ POST http://localhost:5033/games
 Content-Type: application/json
 
 {
-    "name": "dsfjknhlsdgf ljihasdioltguioeuitpoijosfjsdflksdfjklgfdhljkghdfghjlkdfshjjdlsahjfdnjlkgdfjl;k",
+    "name": "Super Mario BangBros",
     "genre": "Adventure",
-    "price": 59.99,
+    "price": 699.99,
     "releaseDate": "2024-07-15"
 }
 
