@@ -1,0 +1,19 @@
+GET http://localhost:5033/games
+
+###
+
+// getGameById
+GET http://localhost:5033/games/1
+
+###
+
+// crateGame
+POST http://localhost:5033/games
+Content-Type: application/json
+
+{
+    "name": "New Game",
+    "genre": "Adventure",
+    "price": 59.99,
+    "releaseDate": "2024-07-15"
+}
