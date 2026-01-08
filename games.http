@@ -3,7 +3,7 @@ GET http://localhost:5033/games
 ###
 
 // getGameById
-GET http://localhost:5033/games/1
+GET http://localhost:5033/games/9
 
 ###
 
@@ -21,7 +21,7 @@ Content-Type: application/json
 ###
 
 // updateGame
-PUT http://localhost:5033/games/6
+PUT http://localhost:5033/games/9
 Content-Type: application/json
 
 {
