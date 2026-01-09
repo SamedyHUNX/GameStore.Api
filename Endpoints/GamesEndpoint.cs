@@ -1,6 +1,7 @@
 using GameStore.Api.Data;
 using GameStore.Api.Dtos;
 using GameStore.Api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Api.Endpoints;
 
@@ -24,7 +25,7 @@ public static class GamesEndpoint
     {
         var group = app.MapGroup("/games");
 
-        group.MapGet("/", () => games);
+        group.MapGet("/", async (GameStoreContext dbContext) => await dbContext.Games.Include(game => game.Genre) .Select(game => new GameDto( game.Id, game.Name, game.Genre!.Name, game.Price, game.ReleaseDate )) .ToListAsync() );
 
         // GET /games/1
         group.MapGet("/{id}", async (int id, GameStoreContext dbContext) =>
