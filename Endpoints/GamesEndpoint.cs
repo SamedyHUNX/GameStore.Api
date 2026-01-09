@@ -8,7 +8,7 @@ namespace GameStore.Api.Endpoints;
 public static class GamesEndpoint
 {
     const string EndpointName = "GetGame";
-    private static readonly List<GameDto> games = [
+    private static readonly List<GameSummaryDto> games = [
         new (1, "Street Fighter 2", "Fighting", 19.99M, new DateOnly(1992, 7, 15)),
         new (2, "Placeholder Game A", "Action", 29.99M, new DateOnly(2000, 1, 1)),
         new (3, "Placeholder Game B", "Adventure", 39.99M, new DateOnly(2001, 2, 2)),
@@ -25,7 +25,7 @@ public static class GamesEndpoint
     {
         var group = app.MapGroup("/games");
 
-        group.MapGet("/", async (GameStoreContext dbContext) => await dbContext.Games.Include(game => game.Genre) .Select(game => new GameDto( game.Id, game.Name, game.Genre!.Name, game.Price, game.ReleaseDate )) .ToListAsync() );
+        group.MapGet("/", async (GameStoreContext dbContext) => await dbContext.Games.Include(game => game.Genre) .Select(game => new GameSummaryDto( game.Id, game.Name, game.Genre!.Name, game.Price, game.ReleaseDate )).AsNoTracking().ToListAsync() );
 
         // GET /games/1
         group.MapGet("/{id}", async (int id, GameStoreContext dbContext) =>
@@ -57,7 +57,7 @@ public static class GamesEndpoint
             dbContext.Games.Add(game);
             await dbContext.SaveChangesAsync();
 
-            GameDetailsDto gameDto = new(
+            GameDetailsDto GameSummaryDto = new(
                 game.Id,
                 game.Name,
                 game.GenreId,
@@ -65,7 +65,7 @@ public static class GamesEndpoint
                 game.ReleaseDate
             );
 
-            return Results.CreatedAtRoute(EndpointName, new {id = gameDto.Id}, game);
+            return Results.CreatedAtRoute(EndpointName, new {id = GameSummaryDto.Id}, game);
         });
 
         // PUT /games/1
@@ -78,7 +78,7 @@ public static class GamesEndpoint
                 return Results.NotFound();
             }
 
-            games[index] = new GameDto(
+            games[index] = new GameSummaryDto(
                 id,
                 updatedGame.Name,
                 updatedGame.Genre,
