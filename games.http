@@ -13,8 +13,8 @@ Content-Type: application/json
 
 {
     "name": "Super Mario BangBros",
-    "genre": "Adventure",
-    "price": 699.99,
+    "genreId": 3,
+    "price": 69.99,
     "releaseDate": "2024-07-15"
 }
 
