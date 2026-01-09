@@ -8,30 +8,30 @@ A RESTful API built with **ASP.NET Core Minimal APIs** and **Entity Framework Co
 
 ## 🚀 Features
 
-*   **Game Management**: Complete CRUD operations (Create, Read, Update, Delete) for video games.
-*   **Genre Filtering**: Retrieve games with their associated genres.
-*   **Data Validation**: Built-in request validation for required fields and data constraints.
-*   **Database Integration**: Uses Entity Framework Core with SQLite for persistent storage.
-*   **Automatic Migrations**: Applies database migrations automatically on application startup.
+- **Game Management**: Complete CRUD operations (Create, Read, Update, Delete) for video games.
+- **Genre Filtering**: Retrieve games with their associated genres.
+- **Data Validation**: Built-in request validation for required fields and data constraints.
+- **Database Integration**: Uses Entity Framework Core with SQLite for persistent storage.
+- **Automatic Migrations**: Applies database migrations automatically on application startup.
 
 ## 🛠️ Tech Stack
 
-*   **Framework**: [.NET 10](https://dotnet.microsoft.com/)
-*   **Language**: [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
-*   **Database**: [SQLite](https://www.sqlite.org/index.html)
-*   **ORM**: [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
+- **Framework**: [.NET 10](https://dotnet.microsoft.com/)
+- **Language**: [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- **Database**: [SQLite](https://www.sqlite.org/index.html)
+- **ORM**: [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
 
 ## 🏁 Getting Started
 
 ### Prerequisites
 
-*   [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet) installed on your machine.
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet) installed on your machine.
 
 ### Installation
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/gamestore-api.git
+    git clone https://github.com/SamedyHUNX/GameStore.Api
     ```
 2.  Navigate to the project directory:
     ```bash
@@ -56,27 +56,27 @@ The API will be available at `http://localhost:5033`.
 
 ### Games
 
-| Method | Endpoint      | Description           |
-| :----- | :------------ | :-------------------- |
-| GET    | `/games`      | Get all games         |
-| GET    | `/games/{id}` | Get a game by ID      |
-| POST   | `/games`      | Create a new game     |
+| Method | Endpoint      | Description             |
+| :----- | :------------ | :---------------------- |
+| GET    | `/games`      | Get all games           |
+| GET    | `/games/{id}` | Get a game by ID        |
+| POST   | `/games`      | Create a new game       |
 | PUT    | `/games/{id}` | Update an existing game |
-| DELETE | `/games/{id}` | Delete a game         |
+| DELETE | `/games/{id}` | Delete a game           |
 
 ### Genres
 
-| Method | Endpoint | Description    |
-| :----- | :------- | :------------- |
-| GET    | `/genres`| Get all genres |
+| Method | Endpoint  | Description    |
+| :----- | :-------- | :------------- |
+| GET    | `/genres` | Get all genres |
 
 ## 📂 Project Structure
 
-*   **`Data/`**: Contains the Database Context (`GameStoreContext`) and data usage logic.
-*   **`Dtos/`**: Data Transfer Objects for API requests and responses.
-*   **`Endpoints/`**: Minimal API route handlers (`GamesEndpoint`, `GenresEndPoints`).
-*   **`Models/`**: Domain entities (`Game`, `Genre`).
-*   **`games.http`**: HTTP file for testing API endpoints directly in VS Code or Visual Studio.
+- **`Data/`**: Contains the Database Context (`GameStoreContext`) and data usage logic.
+- **`Dtos/`**: Data Transfer Objects for API requests and responses.
+- **`Endpoints/`**: Minimal API route handlers (`GamesEndpoint`, `GenresEndPoints`).
+- **`Models/`**: Domain entities (`Game`, `Genre`).
+- **`games.http`**: HTTP file for testing API endpoints directly in VS Code or Visual Studio.
 
 ## 🧪 Testing
 
