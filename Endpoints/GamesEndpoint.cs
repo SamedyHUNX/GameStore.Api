@@ -46,10 +46,17 @@ public static class GamesEndpoint
 
             // Keep track
             dbContext.Games.Add(game);
-
             dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute(EndpointName, new {id = game.Id}, game);
+            GameDetailsDto gameDto = new(
+                game.Id,
+                game.Name,
+                game.GenreId,
+                game.Price,
+                game.ReleaseDate
+            );
+
+            return Results.CreatedAtRoute(EndpointName, new {id = gameDto.Id}, game);
         });
 
         // PUT /games/1
