@@ -8,18 +8,6 @@ namespace GameStore.Api.Endpoints;
 public static class GamesEndpoint
 {
     const string EndpointName = "GetGame";
-    private static readonly List<GameSummaryDto> games = [
-        new (1, "Street Fighter 2", "Fighting", 19.99M, new DateOnly(1992, 7, 15)),
-        new (2, "Placeholder Game A", "Action", 29.99M, new DateOnly(2000, 1, 1)),
-        new (3, "Placeholder Game B", "Adventure", 39.99M, new DateOnly(2001, 2, 2)),
-        new (4, "Placeholder Game C", "RPG", 49.99M, new DateOnly(2002, 3, 3)),
-        new (5, "Placeholder Game D", "Shooter", 59.99M, new DateOnly(2003, 4, 4)),
-        new (6, "Placeholder Game E", "Puzzle", 9.99M, new DateOnly(2004, 5, 5)),
-        new (7, "Placeholder Game F", "Sports", 19.99M, new DateOnly(2005, 6, 6)),
-        new (8, "Placeholder Game G", "Racing", 29.99M, new DateOnly(2006, 7, 7)),
-        new (9, "Placeholder Game H", "Strategy", 39.99M, new DateOnly(2007, 8, 8)),
-        new (10, "Placeholder Game I", "Simulation", 49.99M, new DateOnly(2008, 9, 9))
-    ];
 
     public static void MapGamesEndpoints(this WebApplication app)
     {
